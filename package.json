@@ -1,0 +1,30 @@
+{
+  "name": "yst",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite --mode test",
+    "build-test": "vite build --mode test",
+    "build-ptest": "vite build --mode ptest",
+    "build-staging": "vite build --mode staging",
+    "build-production": "vite build --mode production",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vueuse/core": "9.2.0",
+    "@zhu-hong/confirm-box": "1.0.0",
+    "axios": "0.27.2",
+    "element-ui": "2.15.7",
+    "pinia": "2.0.22",
+    "vue": "2.7.10",
+    "vue-router": "3.6.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue2": "1.1.2",
+    "postcss": "8.4.16",
+    "postcss-nested": "5.0.6",
+    "vite": "3.1.0",
+    "vite-plugin-windicss": "1.8.8",
+    "windicss": "3.5.6"
+  }
+}
