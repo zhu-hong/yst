@@ -1,6 +1,4 @@
 @import url(./preset.css);
-@import url(./theme.css);
-@import url(./elementui.css);
 
 :root {
   --primary-color: #0b58d2;

@@ -5,6 +5,7 @@ import router from '@/routes'
 
 import '@/assets/index.css'
 import 'virtual:windi.css'
+import '@/assets/elu.css'
 
 Vue.use(PiniaVuePlugin)
 

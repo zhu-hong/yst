@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import '@/assets/elu-reset.css'
 
 import Autocomplete from 'element-ui/lib/autocomplete'
 import Button from 'element-ui/lib/button'

@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url'
 import WindiCSS from 'vite-plugin-windicss'
 import axios from 'axios'
 import nested from 'postcss-nested'
+import Legacy from '@vitejs/plugin-legacy'
 
 export default defineConfig(async ({ mode, command }) => {
   const { data: ENVS } = await axios.get('https://dl-res.effio.cn/envList.json')
@@ -20,6 +21,7 @@ export default defineConfig(async ({ mode, command }) => {
       WindiCSS({
         preflight: false,
       }),
+      Legacy(),
     ],
     resolve: {
       alias: {
