@@ -34,7 +34,7 @@ const toRootPath = () => {
       <span>{{ me.name }}</span>
       <div class="w-32px h-32px rounded-full border-2px border-white overflow-hidden flex items-center justify-center ml-10px mr-30px">
         <img :src="me.profilePicture" v-if="me.profilePicture !== ''" @error="me.profilePicture === ''">
-        <span v-else class="w-full h-full flex items-center justify-center bg-[#0c58d2] text-xs">{{ me.name.slice(-2) }}</span>
+        <span v-else class="w-full h-full flex items-center justify-center bg-primary text-xs">{{ me.name.slice(-2) }}</span>
       </div>
       <div class="flex items-center gap-10px cursor-pointer" @click="meStore.logOut">
         <span>退出</span>
