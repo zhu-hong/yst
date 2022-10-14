@@ -1,13 +1,26 @@
-.el-button--small {
-  height: 32px;
-  font-size: 14px;
+.el-button {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-.el-button--small > span {
+.el-button > span {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.el-button--small {
+  height: 32px;
+  font-size: 14px;
+}
+
+.el-input input {
+  color: var(--text-normal-color);
+}
+
+.el-radio__label {
+  font-weight: 400 !important;
+}
+
+.el-tooltip__popper {
+  max-width: 40vh;
 }

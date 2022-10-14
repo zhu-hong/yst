@@ -4,7 +4,7 @@ import { createPinia, PiniaVuePlugin } from 'pinia'
 import router from '@/routes'
 
 import '@/assets/index.css'
-import 'virtual:windi.css'
+import 'windi.css'
 
 Vue.use(PiniaVuePlugin)
 

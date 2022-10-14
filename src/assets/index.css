@@ -5,25 +5,7 @@
 :root {
   --primary-color: #0b58d2;
   --danger-color: #F54A45;
+  --warning-color: #FF9900;
   --text-normal-color: #000c25;
   --border-normal-color: #F5F7FA;
-}
-
-.bg-primary {
-  background-color: var(--primary-color);
-}
-.text-normal {
-  color: var(--text-normal-color);
-}
-.text-danger {
-  color: var(--danger-color);
-}
-.text-primary {
-  color: var(--primary-color);
-}
-.border-normal {
-  border-color: var(--border-normal-color);
-}
-.border-primary {
-  border-color: var(--primary-color);
 }

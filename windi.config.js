@@ -5,6 +5,7 @@ export default defineConfig({
   shortcuts: {
     'bg-primary': 'bg-$primary-color',
     'text-danger': 'text-$danger-color',
+    'text-warning': 'text-$warning-color',
     'text-primary': 'text-$primary-color',
     'border-primary': 'border-$primary-color',
     'text-normal': 'text-$text-normal-color',
