@@ -48,6 +48,15 @@ Basic.interceptors.request.use((config) => {
 Basic.interceptors.response.use((response) => {
   let { status } = response
   if((status >= 200 && status <= 204) || status === 304) {
+    const ExcludeURL = [
+      '/Form/ImpForm',
+      '/Resource/DeleteGroup',
+    ]
+
+    if(RUNTIME_MODE === 'serve' && !ExcludeURL.includes(response.config.url) && response.data.code !== 1000) {
+      Message.error(`${response.config.url}：${response.data.code}`)
+      throw Error('network error')
+    }
     return response
   }
 }, (error) => {
