@@ -1,30 +1,6 @@
 import axios from 'axios'
 import { Message } from '@/utils/elu'
-
-const curryingAxios = (axios) => {
-  return (baseURL) => {
-    return {
-      async post(url, args = {}) {
-        const { data } = await axios({
-          baseURL,
-          method: 'POST',
-          url,
-          data: args,
-        })
-        return data
-      },
-      async get(url, args = {}) {
-        const { data } = await axios({
-          baseURL,
-          method: 'GET',
-          url,
-          params: args,
-        })
-        return data
-      },
-    }
-  }
-}
+import { curryingAxios } from 'currying-axios'
 
 let token = ''
 
