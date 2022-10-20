@@ -4,7 +4,7 @@ import { Message } from '@/utils/elu'
 const curryingAxios = (axios) => {
   return (baseURL) => {
     return {
-      async post(url, args) {
+      async post(url, args = {}) {
         const { data } = await axios({
           baseURL,
           method: 'POST',
@@ -13,7 +13,7 @@ const curryingAxios = (axios) => {
         })
         return data
       },
-      async get(url, args) {
+      async get(url, args = {}) {
         const { data } = await axios({
           baseURL,
           method: 'GET',
