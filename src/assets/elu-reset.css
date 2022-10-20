@@ -22,3 +22,7 @@
 .el-tooltip__popper {
   max-width: 40vh;
 }
+
+[class*=el-table]::-webkit-scrollbar-thumb {
+  background-color: #CFD1D4 !important;
+}

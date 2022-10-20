@@ -21,7 +21,7 @@
   background-color: transparent;
   border-radius: 6px;
 }
-*:hover > *::-webkit-scrollbar-thumb {
+:hover::-webkit-scrollbar-thumb {
   background-color: #CFD1D4;
 }
 ::-webkit-scrollbar-corner,
