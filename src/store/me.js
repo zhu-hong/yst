@@ -12,10 +12,13 @@ const GetMe = async () => {
 }
 
 const Logout = async () => {
-  await basicAxios(`${ACCOUNT_URL}`).post('/Account/User/LogoutWeb')
-  sessionStorage.clear()
-  localStorage.clear()
-  ToLogin()
+  try {
+    await basicAxios(`${ACCOUNT_URL}`).post('/Account/User/LogoutWeb')
+  } finally {
+    sessionStorage.clear()
+    localStorage.clear()
+    ToLogin()
+  }
 }
 
 export const useMeStore =  defineStore('me', {
