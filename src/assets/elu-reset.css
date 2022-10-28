@@ -26,3 +26,11 @@
 [class*=el-table]::-webkit-scrollbar-thumb {
   background-color: #CFD1D4 !important;
 }
+
+.el-table__empty-block {
+  width: 100% !important;
+}
+
+.el-loading-spinner svg {
+  margin: auto;
+}
