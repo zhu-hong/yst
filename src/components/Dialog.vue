@@ -59,7 +59,7 @@ export default {
   </el-dialog>
 </template>
 
-<style lang="scss">
+<style lang="postcss">
 .c-dialog {
   border-radius: 8px !important;
   overflow: hidden;
