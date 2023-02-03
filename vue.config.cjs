@@ -29,11 +29,6 @@ module.exports = defineConfig(async () => {
       optimization: {
         splitChunks: {
           cacheGroups: {
-            elu: {
-              test: /[\\/]node_modules[\\/]element-ui/,
-              priority: 20,
-              name: 'elu',
-            },
           },
         },
       },
