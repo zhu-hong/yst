@@ -2,21 +2,11 @@ import axios from 'axios'
 import { Message } from '@/utils/elui'
 import { curryingAxios } from 'currying-axios'
 
-let token = ''
-
-if(RUNTIME_MODE === 'serve') {
-  token = localStorage.getItem('Authorization')
-} else {
-  token = sessionStorage.getItem('Authorization')
-}
-
 const Basic = axios.create()
 
 Basic.interceptors.request.use((config) => {
 
-  config.headers = {
-    'Authorization': token,
-  }
+  config.headers['Authorization'] = RUNTIME_MODE === 'serve' ? localStorage.getItem('Authorization') : sessionStorage.getItem('Authorization')
 
   return config
 })
