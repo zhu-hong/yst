@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { Message } from '@/utils/elu'
+import { Message } from '@/utils/elui'
 import { curryingAxios } from 'currying-axios'
 
 let token = ''

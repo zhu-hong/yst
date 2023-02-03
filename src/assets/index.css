@@ -1,11 +1,11 @@
 @import url(./preset.css);
-@import url(./elu.css);
-@import url(./elu-reset.css);
+@import url(./elui.css);
+@import url(./elui-reset.css);
 
 :root {
   --primary-color: #0b58d2;
   --danger-color: #F54A45;
   --warning-color: #FF9900;
   --text-normal-color: #000c25;
-  --border-normal-color: #F5F7FA;
+  --border-normal-color: #EBEEF5;
 }

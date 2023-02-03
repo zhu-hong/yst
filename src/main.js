@@ -1,3 +1,5 @@
+console.log(`%c 这次构建@${BUILD_TIME}`, 'color:#f07c82;font-size:24px;')
+
 import Vue from 'vue'
 import App from './App.vue'
 import { createPinia, PiniaVuePlugin } from 'pinia'

@@ -1,0 +1,56 @@
+.el-button {
+  font-size: 16px;
+}
+.el-button > span {
+  display: flex;
+  align-items: center;
+}
+.el-button svg {
+  display: inline-block;
+}
+.el-button--small {
+  height: 32px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.el-input input, .el-textarea textarea {
+  color: #000C25;
+  font-family: system-ui, —apple-system, Segoe UI, Rototo, Emoji, Helvetica, Arial, sans-serif;
+}
+
+.el-radio__label {
+  font-weight: 400 !important;
+}
+
+.el-tooltip__popper, .el-popover {
+  max-width: 50vh;
+}
+
+.el-loading-spinner svg {
+  margin: auto;
+}
+
+.el-dialog {
+  margin-bottom: 0 !important;
+}
+
+.el-table__empty-block {
+  width: 100% !important;
+}
+
+[class*=el-table]::-webkit-scrollbar-thumb {
+  background-color: #CFD1D4 !important;
+}
+
+.el-table::before, .el-table__fixed::before, .el-table__fixed-right::before {
+  display: none;
+}
+
+.el-table th.el-table__cell > .cell {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

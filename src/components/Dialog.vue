@@ -1,65 +1,66 @@
-<script setup>
-import { ref } from 'vue'
-
-defineProps({
-  title: {
-    type: String,
-    default: '',
+<script>
+export default {
+  props: {
+    title: {
+      type: String,
+      default: '',
+    },
+    hbg: {
+      type: String,
+      default: '#FFFFFF',
+    },
+    w: {
+      type: String,
+      default: '460px',
+    },
+    t: {
+      type: String,
+      default: '25vh',
+    },
+    modal: {
+      type: Boolean,
+      default: true,
+    },
   },
-  hbg: {
-    type: String,
-    default: '#EEF1F5',
+  data() {
+    return {
+      visible: false,
+    }
   },
-  w: {
-    type: String,
-    default: '440px',
+  methods: {
+    open() {
+      this.visible = true
+    },
+    close() {
+      this.visible = false
+      this.$emit('close')
+    },
   },
-  t: {
-    type: String,
-    default: '25vh',
-  },
-  modal: {
-    type: Boolean,
-    default: true,
-  },
-})
-
-const visible = ref(false)
-function open() {
-  visible.value = true
 }
-function close() {
-  visible.value = false
-}
-
-defineExpose({
-  open,
-  close,
-})
 </script>
 
 <template>
   <el-dialog
-    :modal-append-to-body="true"
-    :append-to-body="true"
     :top="t"
     :modal="modal"
+    :modal-append-to-body="true"
+    :append-to-body="true"
     :visible.sync="visible"
     :width="w"
     :close-on-click-modal="false"
     :show-close="false"
-    custom-class="z-dialog"
+    custom-class="c-dialog"
   >
-    <div class="z-dialog-header" :style="{ 'background-color': hbg }">
+    <div class="c-dialog-head" :style="{ 'background-color': hbg }">
       <span>{{ title }}</span>
-      <svg @click="close" width="16" height="16" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.071 2.929a.833.833 0 0 1 0 1.178L11.18 10l5.892 5.893a.833.833 0 0 1-1.178 1.178L10 11.18l-5.893 5.89a.833.833 0 0 1-1.178-1.178l5.893-5.894L2.93 4.107A.833.833 0 1 1 4.107 2.93l5.894 5.892 5.892-5.892a.833.833 0 0 1 1.178 0Z" fill="#646A73" fill-rule="evenodd"/></svg>
+      <svg @click="close" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.071 2.929a.833.833 0 0 1 0 1.178L11.18 10l5.892 5.893a.833.833 0 0 1-1.178 1.178L10 11.18l-5.893 5.89a.833.833 0 0 1-1.178-1.178l5.893-5.894L2.93 4.107A.833.833 0 1 1 4.107 2.93l5.894 5.892 5.892-5.892a.833.833 0 0 1 1.178 0Z" fill="#646A73" fill-rule="evenodd"/></svg>
     </div>
     <slot></slot>
   </el-dialog>
 </template>
 
-<style lang="postcss">
-.z-dialog {
+<style lang="scss">
+.c-dialog {
   border-radius: 8px !important;
   overflow: hidden;
 
@@ -72,7 +73,7 @@ defineExpose({
     }
   }
 
-  &-header {
+  &-head {
     box-sizing: border-box;
     height: 48px;
     padding: 0px 20px;
@@ -83,7 +84,7 @@ defineExpose({
     font-size: 16px;
     font-weight: 500;
 
-    svg, div {
+    svg {
       width: 16px;
       height: 16px;
       cursor: pointer;

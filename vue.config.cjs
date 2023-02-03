@@ -22,6 +22,7 @@ module.exports = defineConfig(async () => {
           API_URL: JSON.stringify(ENVS[_ENV].api),
           ACCOUNT_URL: JSON.stringify(ENVS[_ENV].account),
           HOME_URL: JSON.stringify(ENVS[_ENV].webhomepage),
+          BUILD_TIME: JSON.stringify(new Date().toLocaleString()),
         }),
         new WindiCSS(),
       ],

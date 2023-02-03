@@ -11,3 +11,5 @@ declare const RUNTIME_MODE: 'build' | 'serve'
 declare const API_URL: string
 declare const ACCOUNT_URL: string
 declare const HOME_URL: string
+
+declare const BUILD_TIME: string
