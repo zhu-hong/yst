@@ -3,6 +3,7 @@ const axios = require('axios')
 const { DefinePlugin } = require('webpack')
 const WindiCSS = require('windicss-webpack-plugin')
 const Nested = require('postcss-nested')
+const path = require('node:path')
 
 module.exports = defineConfig(async () => {
   const _ENV = process.env.RUNTIME_ENV
@@ -32,6 +33,21 @@ module.exports = defineConfig(async () => {
           },
         },
       },
+      module: {
+        rules: [{
+          test: /\.svg$/,
+          loader: 'svg-sprite-loader',
+          include: [path.join(__dirname, 'src/assets/icons')],
+          options: {
+            symbolId: 'i-[name]'
+          }
+        }]
+      }
+    },
+    chainWebpack: (config) => {
+      const rule = config.module.rule('svg')
+      rule.uses.clear()
+      rule.exclude.add(path.join(__dirname, 'src/assets/icons')).end()
     },
     css: {
       loaderOptions: {
