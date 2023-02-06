@@ -14,12 +14,10 @@ declare const HOME_URL: string
 
 declare const BUILD_TIME: string
 
-declare module 'vue' {
-  import type { DefineComponent, GlobalComponents } from 'vue'
-
+declare module '@vue/runtime-core' {
+  import type Icon from '@/components/Icon.vue'
+  
   export interface GlobalComponents {
-    Icon: DefineComponent<{
-      name: string
-    }>
+    Icon: typeof Icon;
   }
 }
