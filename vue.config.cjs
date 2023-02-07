@@ -5,6 +5,13 @@ const WindiCSS = require('windicss-webpack-plugin')
 const Nested = require('postcss-nested')
 const path = require('node:path')
 
+const dayjs = require('dayjs')
+const utc = require('dayjs/plugin/utc')
+const timezone = require('dayjs/plugin/timezone')
+
+dayjs.extend(utc)
+dayjs.extend(timezone)
+
 module.exports = defineConfig(async () => {
   const _ENV = process.env.RUNTIME_ENV
 
@@ -23,7 +30,7 @@ module.exports = defineConfig(async () => {
           API_URL: JSON.stringify(ENVS[_ENV].api),
           ACCOUNT_URL: JSON.stringify(ENVS[_ENV].account),
           HOME_URL: JSON.stringify(ENVS[_ENV].webhomepage),
-          BUILD_TIME: JSON.stringify(new Date().toLocaleString()),
+          BUILD_TIME: JSON.stringify(dayjs(new Date()).tz('Asia/Shanghai').format('YYYY-MM-DD HH:mm:ss')),
         }),
         new WindiCSS(),
       ],
