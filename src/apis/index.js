@@ -2,7 +2,9 @@ import axios from 'axios'
 import { Message } from '@/utils/elui'
 import { curryingAxios } from 'currying-axios'
 
-const Basic = axios.create()
+const Basic = axios.create({
+  timeout: 8000,
+})
 
 Basic.interceptors.request.use((config) => {
 
@@ -12,21 +14,12 @@ Basic.interceptors.request.use((config) => {
 })
 
 Basic.interceptors.response.use((response) => {
-  let { status } = response
-  if((status >= 200 && status <= 204) || status === 304) {
-    const ExcludeURL = []
-
-    if(RUNTIME_MODE === 'serve' && !ExcludeURL.includes(response.config.url) && response.data.code !== 1000) {
-      Message.error(`${response.config.url}：${response.data.code}`)
-      throw Error('network error')
-    }
-    return response
-  }
+  return response
 }, (error) => {
   let response = error.response
 
   if(!response) {
-    Message.error('无网络')
+    Message.error('服务无响应')
   } else {
     switch(response.status) {
       case 401:
@@ -44,7 +37,7 @@ Basic.interceptors.response.use((response) => {
     }
   }
 
-  throw Error('network error')
+  throw Error(error)
 })
 
 export const basicAxios = curryingAxios(Basic)
