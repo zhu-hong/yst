@@ -60,8 +60,8 @@ export default {
 </template>
 
 <style lang="postcss">
-.c-dialog {
-  border-radius: 8px !important;
+body .c-dialog {
+  border-radius: 8px;
   overflow: hidden;
 
   .el-dialog__ {
